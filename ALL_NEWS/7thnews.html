@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="recent-news-boxes.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="recent-news-boxes.css">
+<link rel="stylesheet" href="../news_folder/navbarnews2.css">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+<link href="../skaxis/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="../ALL_CSS/footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+</script>
+<link rel="stylesheet" href="../ALL_CSS/footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+</script>
+<style>
+    :root {
+  --offset: 6px;
+}
+
+.bodyforhead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+h2 {
+  width: 980px;
+  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+
+}
+
+.mask {
+  height: 106px;
+  position: relative;
+  overflow: hidden;
+  margin-top: var(--offset);
+  /* margin-top: 15%; */
+}
+
+.mask span {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 100px;
+  
+  padding-bottom: var(--offset);
+  /* padding-bottom: 15%; */
+  
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.mask span[data-show] {
+  transform: translateY(-100%);
+  transition: .5s transform ease-in-out;
+}
+
+.mask span[data-up] {
+  transform: translateY(-200%);
+  transition: .5s transform ease-in-out;
+}
+
+.mask span:nth-child(1) {
+  background-image: linear-gradient(45deg, #0ecffe 50%, #07a6f1);
+}
+
+.mask span:nth-child(2) {
+  background-image: linear-gradient(45deg, #18e198 50%, #0ec15d);
+}
+
+.mask span:nth-child(3) {
+  background-image: linear-gradient(45deg, #8a7cfb 50%, #633e9c);
+}
+
+.mask span:nth-child(4) {
+  background-image: linear-gradient(45deg, #fa7671 50%, #f45f7f);
+}
+</style>
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script> $(document).ready(function() {
+    $(".menu-icon").on("click", function() {
+          $("nav ul").toggleClass("showing");
+    });
+});
+
+// Scrolling Effect
+
+$(window).on("scroll", function() {
+    if($(window).scrollTop()) {
+          $('nav').addClass('black');
+    }
+
+    else {
+          $('nav').removeClass('black');
+    }
+})
+$(function(){
+    var str = '#len'; //increment by 1 up to 1-nelemnts
+    $(document).ready(function(){
+      var i, stop;
+      i = 1;
+      stop = 4; //num elements
+      setInterval(function(){
+        if (i > stop){
+          return;
+        }
+        $('#len'+(i++)).toggleClass('bounce');
+      }, 500)
+    });
+  });
+
+  setInterval(function () {
+  const show = document.querySelector('span[data-show]')
+  const next = show.nextElementSibling || document.querySelector('span:first-child')
+  const up = document.querySelector('span[data-up]')
+  
+  if (up) {
+    up.removeAttribute('data-up')
+  }
+  
+  show.removeAttribute('data-show')
+  show.setAttribute('data-up', '')
+  
+  next.setAttribute('data-show', '')
+}, 2000)
+
+</script>
+</head>
+<body>
+  <header>
+      
+    <nav>
+        <div class="menu-icon">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="logo">
+          <a href="../crypto.html"><div class="crypto hoverable" style="font-family: 'Rancho', cursive;color:rgb(255, 255, 255) ;">Crypto Currency</div></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li> <p><a id="len1" class="hoverable" href="../crypto.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>Home</i></b></a></p></li>
+                <li> <p><a id="len2" class="hoverable" href="../crypto.html#about1"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>About</i></b></a></p></li>
+                <li> <p><a id="len3" class="hoverable" href="../newspage.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>News</i></b></a></p></li>
+                <li> <p><a id="len4" class="hoverable" href="../contact.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>Contact</i></b></a></p></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="bodyforhead" style="float:left;">
+    <h2 style="margin-top: 69vh;">
+        <div style="background-color: rgba(0, 0, 0, 0);color: rgb(255, 255, 255); width: 110%;">key factor to successful bussiness </div>
+        <div class="mask" style="background-color: #8c1b3300; width: 80%;">
+            <span data-show >Strategic Focus.</span>
+            <span >Operations.</span>
+          <span>Marketing.</span>
+          <span>Finances.</span>
+        </div>
+      </h2>
+    </div>
+</header>
+<div class="wrapper row3" style="line-height: normal;">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <article class="group btmspace-80">
+      <div class="three_third first"><img class="borderedbox inspace-10" src="https://i.ytimg.com/vi/Pna-S7r9VV8/maxresdefault.jpg" alt="">
+        <hr class="btmspace-80">
+
+        <h3 class="heading" style="font-size:50px;margin-top: 0%;">Pi Network — Will be The Next Bitcoin of the Future</h3>
+        <ul class="nospace meta">
+          <div style="font-size:10px">
+          <li><i class="fa fa-user"></i> <a href="#"><span style="font-size:20px">Meghna</span></a></li>
+        </div>
+        </ul>
+        <br>
+        <p style="font-size: 25px;">
+            Mining cryptocurrency on your phone has always been battery depleting and not cost-effective, however that has now changed with the launch of the Pi Network, a FREE mining software for your mobile phone! <br><br>
+            Created by a group of Stanford University Ph.D. students, this revolutionary new cryptocurrency is set to become one of the most popular in the world, and YES! It could make YOU rich! <br><br>
+            The Pi Network mines cryptocurrency off your phone using no battery power or data and only requires an internet connection to mine. <br><br>
+            Users are encouraged to refer their friends and family to the program to earn more over time and the program recently hit over 9.4 Million registered Pioneers.
+            <b>How Much Is Pi Worth?</b>
+            <br><br>
+            The Pi Network cryptocurrency is currently worth nothing as it is in stage 2 development and has not yet launched on the blockchain, but a back-end marketplace already has users exchanging the currency for up to $10 a coin.
+            Some users have said that when the coin launches on exchanges, expected in 2021, it may reach a value close to that of Ethereum at $200 or possibly more!
+            This would mean if you had mined over 1000 coins on the Pi Network App, you would be sitting on a balance of $200,000 dollars. <br><br>
+            To state how easy it is to earn Pi, I have invited just ten friends so far, and have a balance of close to 3000 coins in a little under one year and not all of my friends mined the coins!
+            Even if the Pi Network only hit a price of $25 per coin, that would still leave me with a $75,000 profit!
+        </p>
+      </div>
+    </article>
+    <!-- ################################################################################################ -->
+    
+    <!-- ################################################################################################ -->
+    
+   
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay coloured" style="background-color: rgb(0, 200, 250);">
+  <article class="hoc cta clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="three_quarter first" >Bitcoin will do to banks what email did to the postal industry <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; – Rick Falkvinge
+
+    </h6>
+    <footer class="one_quarter"><a class="btn" href="1stnews.html" >Next News &raquo;</a></footer>
+  </article>
+</div>
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+      <div class="container">
+          <div class="row">
+             
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Address</h3>
+                      <ul class="list-unstyled f_list">
+                          Y-O-R Solutions,<br>
+Near Maitrikiran high school,<br>
+Gurgaon 21 ,<br>
+Vatika India Nxt.,<br>
+Gurugram ,Haryana - 122012
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18"></h3>
+                      <ul class="list-unstyled f_list">
+                          <li></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Follow us On</h3>
+                      <div class="f_social_icon">
+                          <a href="#" class="fab fa-facebook" id="a1"></a>
+                          <a href="#" class="fab fa-twitter" id="a2"></a>
+                          <a href="#" class="fab fa-instagram" id="a3"></a>
+                          <a href="#" class="fab fa-github" id="a4"></a><br> <br>
+                          <a href="#" class="fab fa-youtube" id="a5"></a>
+                          <a href="#" class="fab fa-linkedin" id="a6"></a>
+                      </div>
+                  </div>
+                  
+              </div>
+              
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                      <ul class="list-unstyled f_list">
+                          phone: +91 900 600 5081 <br>
+E-mail: yor.solutions621@gmail.com <br>
+website: www.yorsolutions.com
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+</footer>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/scripts/jquery.flexslider-min.js"></script>
+    
+</body>
+</html>

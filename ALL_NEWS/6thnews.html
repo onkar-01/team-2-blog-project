@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="recent-news-boxes.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="recent-news-boxes.css">
+<link rel="stylesheet" href="../news_folder/navbarnews2.css">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+<link href="../skaxis/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="../ALL_CSS/footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+</script>
+<link rel="stylesheet" href="../ALL_CSS/footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+</script>
+<style>
+    :root {
+  --offset: 6px;
+}
+
+.bodyforhead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+h2 {
+  width: 980px;
+  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+
+}
+
+.mask {
+  height: 106px;
+  position: relative;
+  overflow: hidden;
+  margin-top: var(--offset);
+  /* margin-top: 15%; */
+}
+
+.mask span {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 100px;
+  
+  padding-bottom: var(--offset);
+  /* padding-bottom: 15%; */
+  
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.mask span[data-show] {
+  transform: translateY(-100%);
+  transition: .5s transform ease-in-out;
+}
+
+.mask span[data-up] {
+  transform: translateY(-200%);
+  transition: .5s transform ease-in-out;
+}
+
+.mask span:nth-child(1) {
+  background-image: linear-gradient(45deg, #0ecffe 50%, #07a6f1);
+}
+
+.mask span:nth-child(2) {
+  background-image: linear-gradient(45deg, #18e198 50%, #0ec15d);
+}
+
+.mask span:nth-child(3) {
+  background-image: linear-gradient(45deg, #8a7cfb 50%, #633e9c);
+}
+
+.mask span:nth-child(4) {
+  background-image: linear-gradient(45deg, #fa7671 50%, #f45f7f);
+}
+</style>
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script> $(document).ready(function() {
+    $(".menu-icon").on("click", function() {
+          $("nav ul").toggleClass("showing");
+    });
+});
+
+// Scrolling Effect
+
+$(window).on("scroll", function() {
+    if($(window).scrollTop()) {
+          $('nav').addClass('black');
+    }
+
+    else {
+          $('nav').removeClass('black');
+    }
+})
+$(function(){
+    var str = '#len'; //increment by 1 up to 1-nelemnts
+    $(document).ready(function(){
+      var i, stop;
+      i = 1;
+      stop = 4; //num elements
+      setInterval(function(){
+        if (i > stop){
+          return;
+        }
+        $('#len'+(i++)).toggleClass('bounce');
+      }, 500)
+    });
+  });
+
+  setInterval(function () {
+  const show = document.querySelector('span[data-show]')
+  const next = show.nextElementSibling || document.querySelector('span:first-child')
+  const up = document.querySelector('span[data-up]')
+  
+  if (up) {
+    up.removeAttribute('data-up')
+  }
+  
+  show.removeAttribute('data-show')
+  show.setAttribute('data-up', '')
+  
+  next.setAttribute('data-show', '')
+}, 2000)
+
+</script>
+</head>
+<body>
+  <header>
+      
+    <nav>
+        <div class="menu-icon">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="logo">
+          <a href="../crypto.html"><div class="crypto hoverable" style="font-family: 'Rancho', cursive;color:rgb(255, 255, 255) ;">Crypto Currency</div></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li> <p><a id="len1" class="hoverable" href="../crypto.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>Home</i></b></a></p></li>
+                <li> <p><a id="len2" class="hoverable" href="../crypto.html#about1"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>About</i></b></a></p></li>
+                <li> <p><a id="len3" class="hoverable" href="../newspage.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>News</i></b></a></p></li>
+                <li> <p><a id="len4" class="hoverable" href="../contact.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>Contact</i></b></a></p></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="bodyforhead" style="float:left;">
+    <h2 style="margin-top: 69vh;">
+        <div style="background-color: rgba(0, 0, 0, 0);color: rgb(255, 255, 255); width: 110%;">key factor to successful bussiness </div>
+        <div class="mask" style="background-color: #8c1b3300; width: 80%;">
+            <span data-show >Strategic Focus.</span>
+            <span >Operations.</span>
+          <span>Marketing.</span>
+          <span>Finances.</span>
+        </div>
+      </h2>
+    </div>
+</header>
+<div class="wrapper row3" style="line-height: normal;">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <article class="group btmspace-80">
+      <div class="three_third first"><img class="borderedbox inspace-10" src="https://i.gadgets360cdn.com/large/africrypt_cajee_brothers_owner_business_insider_1624614218192.jpg?downsize=950:*&output-quality=80&output-format=webp" alt="">
+        <hr class="btmspace-80">
+
+        <h3 class="heading" style="font-size:50px;margin-top: 0%;">Bitcoins Worth $3.6 Billion Have Vanished Along With South African Firm Africrypt And Its Founders</h3>
+        <ul class="nospace meta">
+          <div style="font-size:10px">
+          <li><i class="fa fa-user"></i> <a href="#"><span style="font-size:20px">Meghna</span></a></li>
+        </div>
+        </ul>
+        <br>
+        <p style="font-size: 25px;">Africrypt, a cryptocurrency investment firm in South Africa, run by two brothers — CEO Raees Cajee and COO Ameer Cajee — is under global scrutiny right now after up to $3.6 billion (roughly Rs. 26,700 crores) worth of Bitcoin disappeared from it. What's even more shocking is that there is no trace of the two brothers who ran the firm, that included even celebrity investors. It all started two months ago when the Cajee brothers claimed that the firm had been hacked and were therefore forced to stop operations. <br><br>
+
+            The two brothers, then, implored cryptocurrency investors not to alert the police about the matter, adding doing that might jeopardise the recovery of the “stolen” digital coins worth $3.6 billion from the company's wallet. The company website is not operational either. As of 3:16pm IST on June 25, Bitcoin price in India stood at Rs. 25.51 lakhs. <br><br>
+            
+            According to a Bloomberg report, calls to the two brothers are being directed to the voice mail. A group of about 20 people has hired a law firm, and courts in South Africa have ordered the provisional liquidation of the company that started two years ago and gave huge returns in the beginning. <br><br>
+            
+            Twenty-one-year-old Raees and 17-year-old Ameer are nowhere to be found, but they have until July to appeal against the order, reported The Register. The last communication to investors from Cajee brothers came on April 13. They said that they didn't know the extent of the client information compromised in the “attack.” They, however, promised they would keep everyone informed if they were able to pull back any “stolen funds and compromised information”.
+            <br><br>
+            Meanwhile, Zakira Laher, a cousin of the Cajee brother and a former fellow director at Africrypt, has to deal with a deluge of phone calls — from media and police to investors.
+        
+            <br><br>
+            
+            “We really don't know,” she says, adding that she feared for the safety of her family, including a week-old baby, according to Business Insider. About her position at the firm, Zakria says that her involvement was peripheral and she made no money from Africrypt.
+            <br><br>
+            South Africa's Finance Sector Conduct Authority is mulling a proper investigation into what appears to be a scam of gargantuan proportions, but they, too, are faced with a legal hurdle. Brandon Topham, the head of enforcement, said that cryptocurrency assets in South Africa were not legally considered financial products. <br>
+            
+            <br>
+        </p>
+      </div>
+    </article>
+    <!-- ################################################################################################ -->
+    
+    <!-- ################################################################################################ -->
+    
+   
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay coloured" style="background-color: rgb(0, 200, 250);">
+  <article class="hoc cta clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="three_quarter first" >Bitcoin will do to banks what email did to the postal industry <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; – Rick Falkvinge
+
+    </h6>
+    <footer class="one_quarter"><a class="btn" href="7thnews.html" >Next News &raquo;</a></footer>
+  </article>
+</div>
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+      <div class="container">
+          <div class="row">
+             
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Address</h3>
+                      <ul class="list-unstyled f_list">
+                          Y-O-R Solutions,<br>
+Near Maitrikiran high school,<br>
+Gurgaon 21 ,<br>
+Vatika India Nxt.,<br>
+Gurugram ,Haryana - 122012
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18"></h3>
+                      <ul class="list-unstyled f_list">
+                          <li></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Follow us On</h3>
+                      <div class="f_social_icon">
+                          <a href="#" class="fab fa-facebook" id="a1"></a>
+                          <a href="#" class="fab fa-twitter" id="a2"></a>
+                          <a href="#" class="fab fa-instagram" id="a3"></a>
+                          <a href="#" class="fab fa-github" id="a4"></a><br> <br>
+                          <a href="#" class="fab fa-youtube" id="a5"></a>
+                          <a href="#" class="fab fa-linkedin" id="a6"></a>
+                      </div>
+                  </div>
+                  
+              </div>
+              
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                      <ul class="list-unstyled f_list">
+                          phone: +91 900 600 5081 <br>
+E-mail: yor.solutions621@gmail.com <br>
+website: www.yorsolutions.com
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      
+      
+</footer>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/scripts/jquery.flexslider-min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="recent-news-boxes.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="recent-news-boxes.css">
+<link rel="stylesheet" href="../news_folder/navbarnews2.css">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+<link href="../skaxis/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="../ALL_CSS/footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+</script>
+<link rel="stylesheet" href="../ALL_CSS/footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+</script>
+<style>
+    :root {
+  --offset: 6px;
+}
+
+.bodyforhead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+h2 {
+  width: 980px;
+  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+
+}
+
+.mask {
+  height: 106px;
+  position: relative;
+  overflow: hidden;
+  margin-top: var(--offset);
+  /* margin-top: 15%; */
+}
+
+.mask span {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 100px;
+  
+  padding-bottom: var(--offset);
+  /* padding-bottom: 15%; */
+  
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.mask span[data-show] {
+  transform: translateY(-100%);
+  transition: .5s transform ease-in-out;
+}
+
+.mask span[data-up] {
+  transform: translateY(-200%);
+  transition: .5s transform ease-in-out;
+}
+
+.mask span:nth-child(1) {
+  background-image: linear-gradient(45deg, #0ecffe 50%, #07a6f1);
+}
+
+.mask span:nth-child(2) {
+  background-image: linear-gradient(45deg, #18e198 50%, #0ec15d);
+}
+
+.mask span:nth-child(3) {
+  background-image: linear-gradient(45deg, #8a7cfb 50%, #633e9c);
+}
+
+.mask span:nth-child(4) {
+  background-image: linear-gradient(45deg, #fa7671 50%, #f45f7f);
+}
+</style>
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script> $(document).ready(function() {
+    $(".menu-icon").on("click", function() {
+          $("nav ul").toggleClass("showing");
+    });
+});
+
+// Scrolling Effect
+
+$(window).on("scroll", function() {
+    if($(window).scrollTop()) {
+          $('nav').addClass('black');
+    }
+
+    else {
+          $('nav').removeClass('black');
+    }
+})
+$(function(){
+    var str = '#len'; //increment by 1 up to 1-nelemnts
+    $(document).ready(function(){
+      var i, stop;
+      i = 1;
+      stop = 4; //num elements
+      setInterval(function(){
+        if (i > stop){
+          return;
+        }
+        $('#len'+(i++)).toggleClass('bounce');
+      }, 500)
+    });
+  });
+
+  setInterval(function () {
+  const show = document.querySelector('span[data-show]')
+  const next = show.nextElementSibling || document.querySelector('span:first-child')
+  const up = document.querySelector('span[data-up]')
+  
+  if (up) {
+    up.removeAttribute('data-up')
+  }
+  
+  show.removeAttribute('data-show')
+  show.setAttribute('data-up', '')
+  
+  next.setAttribute('data-show', '')
+}, 2000)
+
+</script>
+</head>
+<body>
+  <header>
+      
+    <nav>
+        <div class="menu-icon">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="logo">
+          <a href="../crypto.html"><div class="crypto hoverable" style="font-family: 'Rancho', cursive;color:rgb(255, 255, 255) ;">Crypto Currency</div></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li> <p><a id="len1" class="hoverable" href="../rypto.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>Home</i></b></a></p></li>
+                <li> <p><a id="len2" class="hoverable" href="../crypto.html#about1"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>About</i></b></a></p></li>
+                <li> <p><a id="len3" class="hoverable" href="../newspage.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>News</i></b></a></p></li>
+                <li> <p><a id="len4" class="hoverable" href="../contact.html"
+                        style="color:rgb(255, 255, 255);font-family: 'Roboto Condensed', sans-serif;"><b><i>Contact</i></b></a></p></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="bodyforhead" style="float:left;">
+    <h2 style="margin-top: 69vh;">
+        <div style="background-color: rgba(0, 0, 0, 0);color: rgb(255, 255, 255); width: 110%;">key factor to successful bussiness </div>
+        <div class="mask" style="background-color: #8c1b3300; width: 80%;">
+            <span data-show >Strategic Focus.</span>
+            <span >Operations.</span>
+          <span>Marketing.</span>
+          <span>Finances.</span>
+        </div>
+      </h2>
+    </div>
+</header>
+<div class="wrapper row3" style="line-height: normal;">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <article class="group btmspace-80">
+      <div class="three_third first"><img class="borderedbox inspace-10" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/dubaicoin_505_280521102523.jpg?size=1200:675" alt="">
+        <hr class="btmspace-80">
+
+        <h3 class="heading" style="font-size:50px;margin-top: 0%;">Dubai's Own Cryptocurrency DubaiCoin Jumps 1000% In 24 Hours</h3>
+        <ul class="nospace meta">
+          <div style="font-size:10px">
+          <li><i class="fa fa-user"></i> <a href="#"><span style="font-size:20px">Onkar</span></a></li>
+        </div>
+        </ul>
+        <br>
+        <p style="font-size: 25px;">Jumping on the bandwagon, Dubai has launched its own cryptocurrency -- DubaiCoin (DBIX). Based on a public blockchain, the crypto is trading on a select number of exchanges. Public blockchain will allow people to generate their own DubaiCoin by mining them. The price of the crypto rose by 1,000 per cent over the last 24 hours. According to Crypto.com, DubaiCoin was trading at around $0.17 but picked up to $1.13 on May 27. <br> <br>
+
+            However, Government of Dubai clarified that the digital coin has not been approved by any official authority. <br><br>
+        
+
+            DubaiCoin was launched by United Arab Emirates (UAE) based company Arabianchain Technology. It claims to be the first public blockchain based cryptocurrency in the Arabic world. The company said in a statement that DubaiCoin will soon be able to be used for a range of products and services both offline and online, and used in place of traditional bank-backed currencies. "Circulation of the new digital currency will be controlled by both the city itself and authorised brokers," the company said. <br> <br>
+
+It appears that DubaiCoin would be somewhat different from regular cryptocurrencies. For instance, mining would render the coin volatile but then Arabchain has said that the city of Dubai is regulating its price. It is likely to qualify as a central bank digital currency. It is the closest thing to China's official digital Yuan that is being tested in the country right now. Some other countries are also also considering digital versions of flat countries. <br><br>
+
+Closer home, Indian cryptocurrency platform Polygon has been making headlines. Billionaire investor of Shark Tank fame, Mark Cuban, has invested in Polygon. Its native token Matic has crossed a market cap of over $10 billion and is now among the top 20 crypto coins in the world. <br><br>
+Moreover, cryptocurrency prices rebounded on Friday after trading weaker on Thursday. Bitcoin was trading just above $38,000 at around 9:25 am. It is still struggling to cross $40,000 amid China's crackdown on virtual coins. Bitcoin has tumbled roughly 30 per cent this month amid China's crackdown and Elon Musk's concerns on the environmental impact of crypto mining. <br><br>
+
+          
+        </p>
+        
+    </article>
+    <!-- ################################################################################################ -->
+    
+    <!-- ################################################################################################ -->
+    
+   
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay coloured" style="background-color: rgb(0, 200, 250);">
+  <article class="hoc cta clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="three_quarter first" >Bitcoin will do to banks what email did to the postal industry <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; – Rick Falkvinge
+
+    </h6>
+    <footer class="one_quarter"><a class="btn" href="5thnews.html" >Next News &raquo;</a></footer>
+  </article>
+</div>
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+      <div class="container">
+          <div class="row">
+             
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Address</h3>
+                      <ul class="list-unstyled f_list">
+                          Y-O-R Solutions,<br>
+Near Maitrikiran high school,<br>
+Gurgaon 21 ,<br>
+Vatika India Nxt.,<br>
+Gurugram ,Haryana - 122012
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18"></h3>
+                      <ul class="list-unstyled f_list">
+                          <li></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Follow us On</h3>
+                      <div class="f_social_icon">
+                          <a href="#" class="fab fa-facebook" id="a1"></a>
+                          <a href="#" class="fab fa-twitter" id="a2"></a>
+                          <a href="#" class="fab fa-instagram" id="a3"></a>
+                          <a href="#" class="fab fa-github" id="a4"></a><br> <br>
+                          <a href="#" class="fab fa-youtube" id="a5"></a>
+                          <a href="#" class="fab fa-linkedin" id="a6"></a>
+                      </div>
+                  </div>
+                  
+              </div>
+              
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                      <ul class="list-unstyled f_list">
+                          phone: +91 900 600 5081 <br>
+E-mail: yor.solutions621@gmail.com <br>
+website: www.yorsolutions.com
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      
+      
+</footer>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/scripts/jquery.flexslider-min.js"></script>
+    
+</body>
+</html>
